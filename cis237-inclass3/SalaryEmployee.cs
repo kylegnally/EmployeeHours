@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace cis237_inclass3
 {
-    class Employee
+    class SalaryEmployee
     {
         //*****************************
         //Variable / Backing fields
         //*****************************
+        const int WEEKS_PER_YEAR = 52;
+
         private string firstName;
         private string lastName;
         private decimal weeklySalary;
@@ -30,10 +32,12 @@ namespace cis237_inclass3
             set { lastName = value; }
         }
 
-        public decimal WeeklySalary
+        public decimal Salary
         {
-            get { return weeklySalary; }
-            set { weeklySalary = value; }
+            get
+            {
+                return weeklySalary * WEEKS_PER_YEAR;
+            }
         }
 
         //******************************
@@ -46,22 +50,17 @@ namespace cis237_inclass3
 
         public override string ToString()
         {
-            return firstName + " " + lastName + " " + weeklySalary.ToString("C");
+            return firstName + " " + lastName + " " + Salary.ToString("C");
         }
 
         //*****************************
         //Constructors
         //*****************************
-        public Employee(string FirstName, string LastName, decimal WeeklySalary)
+        public SalaryEmployee(string FirstName, string LastName, decimal WeeklySalary)
         {
             this.firstName = FirstName;
             this.lastName = LastName;
             this.weeklySalary = WeeklySalary;
-        }
-
-        public Employee()
-        {
-            //Do Nothing
         }
     }
 }
