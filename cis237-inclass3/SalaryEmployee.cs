@@ -6,32 +6,18 @@ using System.Threading.Tasks;
 
 namespace cis237_inclass3
 {
-    class SalaryEmployee
+    // This is how you inherit from a parent class.
+    // ClassName : ParentClassName
+    class SalaryEmployee : Employee
     {
         //*****************************
         //Variable / Backing fields
         //*****************************
-        const int WEEKS_PER_YEAR = 52;
-
-        private string firstName;
-        private string lastName;
         private decimal weeklySalary;
 
         //*****************************
         //Properties
         //*****************************
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
-
-        public string LastName
-        {
-            get { return lastName; }
-            set { lastName = value; }
-        }
-
         public decimal Salary
         {
             get
@@ -43,23 +29,26 @@ namespace cis237_inclass3
         //******************************
         //Public Methods
         //******************************
-        public string FirstAndLastName()
-        {
-            return firstName + " " + lastName;
-        }
-
         public override string ToString()
         {
-            return firstName + " " + lastName + " " + Salary.ToString("C");
+            // Must use base to get a reference to the base class.
+            // If I did not include it here, it would use the ToString
+            // method that I am already in, and start recursion.
+            return base.ToString() + " " + Salary.ToString("C");
         }
 
         //*****************************
         //Constructors
         //*****************************
-        public SalaryEmployee(string FirstName, string LastName, decimal WeeklySalary)
+        public SalaryEmployee(
+            string FirstName,
+            string LastName,
+            decimal WeeklySalary
+            // Use the base keyword to delegate the work of setting
+            // the first and last name to the parent class by calling
+            // the parent (base) constructor.
+        ) : base(FirstName, LastName)
         {
-            this.firstName = FirstName;
-            this.lastName = LastName;
             this.weeklySalary = WeeklySalary;
         }
     }

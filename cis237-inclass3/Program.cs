@@ -15,14 +15,14 @@ namespace cis237_inclass3
             UserInterface ui = new UserInterface();
 
             //Let's make an array to hold a bunch of instances of the Employee class
-            SalaryEmployee[] employees = new SalaryEmployee[10];
+            Employee[] employees = new Employee[10];
 
             //Let's add some employees to our array
             employees[0] = new SalaryEmployee("David", "Barnes", 835.00m);
             employees[1] = new SalaryEmployee("James", "Kirk", 453.00m);
-            employees[2] = new SalaryEmployee("Jean-Luc", "Picard", 290.00m);
+            employees[2] = new HourlyEmployee("Jean-Luc", "Picard", 9.00m, 40.0m);
             employees[3] = new SalaryEmployee("Benjamin", "Sisko", 587.00m);
-            employees[4] = new SalaryEmployee("Kathryn", "Janeway", 194.00m);
+            employees[4] = new HourlyEmployee("Kathryn", "Janeway", 9.40m, 20.0m);
             employees[5] = new SalaryEmployee("Johnathan", "Archer", 135.00m);
 
             //Get some input from the user
@@ -38,7 +38,7 @@ namespace cis237_inclass3
                     string outputString = "";
 
                     //Print out the employees in the array
-                    foreach (SalaryEmployee employee in employees)
+                    foreach (Employee employee in employees)
                     {
                         if (employee != null)
                         {

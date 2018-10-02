@@ -6,33 +6,17 @@ using System.Threading.Tasks;
 
 namespace cis237_inclass3
 {
-    class HourlyEmployee
+    class HourlyEmployee : Employee
     {
         //*****************************
         //Variable / Backing fields
         //*****************************
-        const int WEEKS_PER_YEAR = 52;
-
-        private string firstName;
-        private string lastName;
         private decimal hourlyRate;
         private decimal hoursPerWeek;
 
         //*****************************
         //Properties
         //*****************************
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
-
-        public string LastName
-        {
-            get { return lastName; }
-            set { lastName = value; }
-        }
-
         public decimal Salary
         {
             get
@@ -44,14 +28,9 @@ namespace cis237_inclass3
         //******************************
         //Public Methods
         //******************************
-        public string FirstAndLastName()
-        {
-            return firstName + " " + lastName;
-        }
-
         public override string ToString()
         {
-            return firstName + " " + lastName + " " + Salary.ToString("C");
+            return base.ToString() + " " + Salary.ToString("C");
         }
 
         //*****************************
@@ -62,9 +41,8 @@ namespace cis237_inclass3
             string LastName,
             decimal HourlyRate,
             decimal HoursPerWeek
-        ) {
-            this.firstName = FirstName;
-            this.lastName = LastName;
+        ) : base(FirstName, LastName)
+        {
             this.hourlyRate = HourlyRate;
             this.hoursPerWeek = HoursPerWeek;
         }
