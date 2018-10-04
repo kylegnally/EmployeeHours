@@ -18,7 +18,7 @@ namespace cis237_inclass3
         //*****************************
         //Properties
         //*****************************
-        public decimal Salary
+        public override decimal Salary
         {
             get
             {
@@ -35,6 +35,20 @@ namespace cis237_inclass3
             // If I did not include it here, it would use the ToString
             // method that I am already in, and start recursion.
             return base.ToString() + " " + Salary.ToString("C");
+        }
+
+        // Overriding the abstract method in Employee
+        public override string FormattedSalary()
+        {
+            return Salary.ToString("C");
+        }
+
+        // Show how to override a virtual method.
+        // I didn't really want to change it, so I
+        // am just calling the parent's version.
+        public override string FirstAndLastName()
+        {
+            return base.FirstAndLastName();
         }
 
         //*****************************

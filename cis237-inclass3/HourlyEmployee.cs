@@ -17,7 +17,7 @@ namespace cis237_inclass3
         //*****************************
         //Properties
         //*****************************
-        public decimal Salary
+        public override decimal Salary
         {
             get
             {
@@ -32,6 +32,14 @@ namespace cis237_inclass3
         {
             return base.ToString() + " " + Salary.ToString("C");
         }
+
+        // Overriding the abstract method in Employee
+        public override string FormattedSalary()
+        {
+            return Salary.ToString("C");
+        }
+
+        // Did not override the virtual method in Employee FirstAndLastName
 
         //*****************************
         //Constructors
