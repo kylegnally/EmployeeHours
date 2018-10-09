@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using FilterLibrary;
+
 namespace cis237_inclass3
 {
     class Program
@@ -15,7 +17,7 @@ namespace cis237_inclass3
             UserInterface ui = new UserInterface();
 
             //Let's make an array to hold a bunch of instances of the Employee class
-            Employee[] employees = new Employee[10];
+            IEmployee[] employees = new IEmployee[10];
 
             //Let's add some employees to our array
             employees[0] = new SalaryEmployee("David", "Barnes", 835.00m);
@@ -29,7 +31,7 @@ namespace cis237_inclass3
             int choice = ui.GetUserInput();
 
             //While the choice they selected is not 2, continue to do work
-            while (choice != 2)
+            while (choice != 3)
             {
                 //See if the input they sent is equal to 1.
                 if (choice == 1)
@@ -49,6 +51,26 @@ namespace cis237_inclass3
                     }
 
                     //Use the UI class to print out the string
+                    ui.Output(outputString);
+                }
+
+                //See if the input they sent is equal to 1.
+                if (choice == 2)
+                {
+                    PersonFilter filter = new PersonFilter();
+                    IPerson[] filteredEmployees = filter.FilterByFirstName(employees, "David");
+
+                    // Create a string that can be concated to
+                    string outputString = "";
+
+                    // Print out the employees in the array
+                    foreach (IEmployee employee in filteredEmployees)
+                    {
+                        if (employee != null)
+                        {
+                            outputString += employee.ToString() + Environment.NewLine;
+                        }
+                    }
                     ui.Output(outputString);
                 }
 

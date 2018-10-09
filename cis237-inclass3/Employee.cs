@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace cis237_inclass3
 {
     // This is an abstract class. It is made abstract by adding the 'abstract'
     // keyword before the word class. Abstract classes can NOT be instaciated.
     // The primary use for them is to provide functionality that child classes
     // can use, and extend from.
-    abstract class Employee
+    abstract class Employee : IEmployee
     {
         //*****************************
         //Variable / Backing fields
@@ -38,6 +39,7 @@ namespace cis237_inclass3
         }
 
         public abstract decimal Salary { get; }
+        public int Age { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         //******************************
         //Public Methods
