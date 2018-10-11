@@ -11,7 +11,7 @@ namespace cis237_inclass3
     // keyword before the word class. Abstract classes can NOT be instaciated.
     // The primary use for them is to provide functionality that child classes
     // can use, and extend from.
-    abstract class Employee : IEmployee
+    public abstract class Employee : IEmployee
     {
         //*****************************
         //Variable / Backing fields

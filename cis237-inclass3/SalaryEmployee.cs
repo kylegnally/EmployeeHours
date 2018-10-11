@@ -8,7 +8,7 @@ namespace cis237_inclass3
 {
     // This is how you inherit from a parent class.
     // ClassName : ParentClassName
-    class SalaryEmployee : Employee
+    public class SalaryEmployee : Employee
     {
         //*****************************
         //Variable / Backing fields

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cis237-inclass3", "cis237-i
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterLibrary", "FilterLibrary\FilterLibrary.csproj", "{6837D216-66AE-4DC8-9E49-C44502AC4667}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cis237-inclass3Tests", "cis237-inclass3Tests\cis237-inclass3Tests.csproj", "{70805495-94CF-46A4-813F-1B5ED7DFD124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6837D216-66AE-4DC8-9E49-C44502AC4667}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6837D216-66AE-4DC8-9E49-C44502AC4667}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6837D216-66AE-4DC8-9E49-C44502AC4667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70805495-94CF-46A4-813F-1B5ED7DFD124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70805495-94CF-46A4-813F-1B5ED7DFD124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70805495-94CF-46A4-813F-1B5ED7DFD124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70805495-94CF-46A4-813F-1B5ED7DFD124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
